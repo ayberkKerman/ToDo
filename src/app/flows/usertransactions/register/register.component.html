@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../register/register.component.scss">
+</head>
+<body>
+      
+    <br>
+    <br>
+    <br>
+    <div class="container" >
+
+        
+        <div class="row">
+        <div class="col-md-3">
+                      
+        </div>
+                
+        <div class="col-md-6 main">
+            <form #toDoForm="ngForm" (ngSubmit)="registerUser(toDoForm.value)"> 
+                
+                <li class="col-sm styled-col">
+                    <input class="box" type="text" name="userEmail" id="userEmail" 
+                    placeholder="Email" ngModel required /><br>
+                </li>
+                
+                <li class="col-sm styled-col">
+                    <input class="box" type="userPassword" name="userPassword" id="userPassword" 
+                    placeholder="Password" ngModel  required /><br>
+                </li>
+                <li class="col-sm styled-col">
+                    <input class="box" type="userConfirmPassword" name="userConfirmPassword" id="userConfirmPassword" 
+                    placeholder="Confirm Password" ngModel  required /><br>
+                </li>
+                
+                <p class="text">* Must be filled!</p>
+                
+                <app-button class = "ButtonSubmit" type="submit" text="Sign in"></app-button>
+                <a routerLink=""> <app-button  text="Back" class = "btn-sm Register"></app-button></a>
+            </form>         
+    
+        </div>
+                  
+                  
+        <div class="col-md-3">
+        </div>
+                  
+    </div>
+    </div>
+</body>
+</html>

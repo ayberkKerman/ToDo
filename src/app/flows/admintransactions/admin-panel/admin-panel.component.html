@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../admin-panel/admin-panel.component.scss">
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <div class="container" >
+
+        
+        <div class="row">
+        <div class="col-md-3">
+                      
+        </div>
+         <header class="h1">Create Editor</header>       
+        <div class="col-md-6 main">
+            <form #toDoForm="ngForm" (ngSubmit)="registerEditor(toDoForm.value)"> 
+                
+                <li class="col-sm styled-col">
+                    <input class="box" type="text" name="userEmail" id="userEmail" 
+                    placeholder="Email" ngModel required /><br>
+                </li>
+                
+                <li class="col-sm styled-col">
+                    <input class="box" type="userPassword" name="userPassword" id="userPassword" 
+                    placeholder="Password" ngModel  required /><br>
+                </li>
+                <li class="col-sm styled-col">
+                    <input class="box" type="userConfirmPassword" name="userConfirmPassword" id="userConfirmPassword" 
+                    placeholder="Confirm Password" ngModel  required /><br>
+                </li>
+                
+                <p class="text">* Must be filled!</p>
+                
+                <app-button class = "ButtonSubmit" type="submit" text="Add Editor"></app-button>
+                <a routerLink=""> <app-button  text="Log Out" class = "btn-sm Register"></app-button></a>
+            </form> 
+ 
+        </div>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+
+        <div class ="row align-items-start" *ngFor="let user of editorList">
+            <div class="col styled-col">
+                <li>
+                    <a>{{user.Email}}   --   {{user.Id}}</a> 
+                    <a class="links" (click)="deleteEditor(user.Id)">Delete</a>
+                </li>
+
+            </div>
+          </div>
+                  
+                  
+        <div class="col-md-3">
+        </div>
+                  
+    </div>
+    </div>
+</body>
+</html>

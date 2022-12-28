@@ -1,0 +1,56 @@
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
+$buttonColor: rgba(2, 76, 78, 0.623);
+
+@mixin checkboxesChecked {
+  border: 1px solid rgb(35, 124, 124);
+  width: 15px;
+  height: 15px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+ 
+
+.styled-col{
+    
+    border-bottom: 1px solid rgb(35, 124, 124);
+    border-top: 1px solid rgb(35, 124, 124);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 100%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    
+  }
+.text{
+    color:rgb(182, 10, 10)
+}
+
+.textCreate{
+    color: rgb(60, 6, 255);
+    font-weight: bold;
+}
+
+.display{
+    min-width: 100%;
+    min-height: 98vh;
+    background-color: rgb(42, 187, 175);;
+  }
+
+.ButtonBack{
+  text-align: center;
+  position: absolute;
+  right: 1%;
+}
+
+.ButtonSubmit{
+  text-align: center;
+  left: 1%;
+  position: absolute;
+}
+
+
+.checkBoxEmpty{
+  accent-color: green;
+}
+
+.checkBoxEmpty:hover{
+  @include checkboxesChecked();
+}

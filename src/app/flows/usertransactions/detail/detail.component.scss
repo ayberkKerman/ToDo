@@ -1,0 +1,76 @@
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+@mixin checkboxesChecked {
+    border: 1px solid rgb(35, 124, 124);
+    width: 15px;
+    height: 15px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+.PiecesOfSelectedToDo{
+    color: #000000;
+    background-color: rgb(129, 248, 238);
+    
+}
+
+.textOfSelectedToDo{
+    font-weight: bold;
+}
+
+html{
+    min-width: 100%;
+    min-height: 98vh;
+    background-color: aquamarine; 
+}
+li{
+    background-color: rgb(42, 187, 175);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-bottom:  1px solid rgb(35, 124, 124);
+    border-top: 1px solid rgb(35, 124, 124);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.warningText{
+    color: rgb(255, 0, 0);
+    
+}
+
+.ChangeButton{
+    text-align: center;
+    padding: 10px;
+}
+
+
+.BackButton{
+    right: 2%;
+    position: absolute;
+    text-align: center;
+    padding: 10px;
+    
+}
+
+.DeleteButton{
+    
+    text-align: center;
+    padding: 10px;
+   
+}
+
+.checkBoxEmpty{
+    accent-color: green;
+  }
+
+.checkBoxEmpty:hover{
+    @include checkboxesChecked();
+  }

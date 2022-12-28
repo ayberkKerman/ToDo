@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="display">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="../to-do/to-do.component.scss">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="d-flex display-2">ToDo List</h1>
+    <hr>
+    <h3 class="SecondHeader">NOT COMPLETED TODOES</h3>
+
+    <div class ="row align-items-start"> 
+      <div class="col "><h3 class="littleHeader">Title</h3></div>
+      <div class="col "><h3 class="littleHeader">Priority</h3></div>
+    </div>
+    <div class ="row align-items-start" *ngFor="let toDo of toDoList">
+      <div class="col styled-col" *ngIf="toDo.IsCompleted == false && toDo.Priority=='High'">
+       <input type="checkbox"  class="checkBoxHigh" name="isCompleted" (change)="changeTheIsCompleted(toDo.Id,$event)" *ngIf="toDo.IsCompleted==false" > 
+
+ 
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Title}} 
+        </a>
+      </div>
+      <div class="col styled-col"*ngIf="toDo.IsCompleted == false && toDo.Priority=='High'">
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Priority}} 
+        </a>
+      </div>
+    </div>
+
+    <div class ="row align-items-start" *ngFor="let toDo of toDoList">
+      <div class="col styled-col" *ngIf="toDo.IsCompleted == false && toDo.Priority=='Medium'">
+        <input type="checkbox" class="checkBoxMedium" name="isCompleted" (change)="changeTheIsCompleted(toDo.Id,$event)" *ngIf="toDo.IsCompleted==false">
+
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Title}} 
+        </a>
+      </div>
+      <div class="col styled-col"*ngIf="toDo.IsCompleted == false && toDo.Priority=='Medium'">
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Priority}} 
+        </a>
+      </div>
+    </div>
+
+    <div class ="row align-items-start" *ngFor="let toDo of toDoList">
+      <div class="col styled-col" *ngIf="toDo.IsCompleted == false && toDo.Priority=='Low'">
+        <input type="checkbox" class="checkBoxLow" name="isCompleted" (change)="changeTheIsCompleted(toDo.Id,$event)" *ngIf="toDo.IsCompleted==false" >
+        
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Title}} 
+        </a>
+        
+          
+        
+          
+      </div>
+      <div class="col styled-col"*ngIf="toDo.IsCompleted == false && toDo.Priority=='Low'">
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Priority}} 
+        </a>
+      </div>
+    </div>
+    <div class ="row align-items-start" *ngFor="let toDo of toDoList">
+      <div class="col styled-col" *ngIf="toDo.IsCompleted == false && toDo.Priority==''">
+        <input type="checkbox" class="checkBoxEmpty" name="isCompleted" (change)="changeTheIsCompleted(toDo.Id,$event)" *ngIf="toDo.IsCompleted==false" >
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Title}} 
+        </a>
+      </div>
+      <div class="col styled-col"*ngIf="toDo.IsCompleted == false && toDo.Priority==''">
+        <a class="links" >
+          {{toDo.Priority}} 
+        </a>
+      </div>
+    </div>
+    
+
+
+
+
+    <h3 class="SecondHeader">COMPLETED TODOES</h3>
+
+    <div class ="row align-items-start"> 
+      <div class="col"><h3 class="littleHeader">Title</h3></div>
+      <div class="col"><h3 class="littleHeader">Priority</h3></div>
+    </div>
+    <div class ="row align-items-start" *ngFor="let toDo of toDoList">
+      <div class="col  styled-col" *ngIf="toDo.IsCompleted == true && toDo.Priority=='High'">
+        <input type="checkbox" class="checkBoxHigh" name="isCompleted" (change)="changeTheIsCompleted(toDo.Id,$event)" *ngIf="toDo.IsCompleted==true" checked>
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Title}} 
+        </a>
+      </div>
+      <div class="col  styled-col"*ngIf="toDo.IsCompleted == true && toDo.Priority=='High'">
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Priority}} 
+        </a>
+      </div>
+    </div>
+
+    <div class ="row align-items-start" *ngFor="let toDo of toDoList">
+      <div class="col  styled-col" *ngIf="toDo.IsCompleted == true && toDo.Priority=='Medium'">
+        <input type="checkbox" class="checkBoxMedium" name="isCompleted" (change)="changeTheIsCompleted(toDo.Id,$event)" *ngIf="toDo.IsCompleted==true" checked>
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Title}} 
+        </a>
+      </div>
+      <div class="col  styled-col"*ngIf="toDo.IsCompleted == true && toDo.Priority=='Medium'">
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Priority}} 
+        </a>
+      </div>
+    </div>
+
+    <div class ="row align-items-start" *ngFor="let toDo of toDoList">
+      <div class="col styled-col" *ngIf="toDo.IsCompleted == true && toDo.Priority=='Low'">
+        <input type="checkbox" class="checkBoxLow" name="isCompleted" (change)="changeTheIsCompleted(toDo.Id,$event)" *ngIf="toDo.IsCompleted==true" checked>
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Title}} 
+        </a>
+      </div>
+      <div class="col  styled-col"*ngIf="toDo.IsCompleted == true && toDo.Priority=='Low'">
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Priority}} 
+        </a>
+      </div>
+    </div>
+    <div class ="row align-items-start" *ngFor="let toDo of toDoList">
+      <div class="col  styled-col" *ngIf="toDo.IsCompleted == true && toDo.Priority==''">
+        <input type="checkbox" class="checkBoxEmpty" name="isCompleted" (change)="changeTheIsCompleted(toDo.Id,$event)" *ngIf="toDo.IsCompleted==true" checked>
+        <a class="links" [routerLink]="['details', toDo.Id]">
+          {{toDo.Title}} 
+        </a>
+      </div>
+      <div class="col  styled-col"*ngIf="toDo.IsCompleted == true && toDo.Priority==''">
+        <a class="links" >
+          {{toDo.Priority}} 
+        </a>
+      </div>
+    </div>
+      
+  </div>
+  
+  <a> <app-button (click)="gotoCreate()" text="Create" class = "btn-sm Create"></app-button></a>
+  
+</body>
+
+</html>

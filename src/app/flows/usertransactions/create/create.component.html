@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="display">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../create/create.component.scss">
+</head>
+<body>
+    <div class ="form-area">
+        <h3 class="display-2">Create ToDo</h3>
+        <hr>
+
+        <form #toDoForm="ngForm" (ngSubmit)="onToDoCreate(toDoForm.value)"> 
+            <li class="col-sm styled-col">
+                <input id="txtTitle"  placeholder="*Title" type="text" name="title" ngModel="" required #title ="ngModel">
+                <div class="text" *ngIf="title.invalid">
+                   Title is Required.
+                </div>
+            </li>
+            <li class="col-sm styled-col">
+                
+                <input id="txtDetails" type="text"   placeholder="Detail" name="detail" ngModel>
+            </li>
+            <li class="col-sm styled-col">
+                <label class="textCreate" for="prty">Priority: </label>
+                <select #slctPriority name = "priority"  id="prty" ngModel>
+                    <option value ="High">High</option>
+                    <option value ="Medium">Medium</option>
+                    <option value ="Low">Low</option>
+                </select>
+            </li>
+            <li class="col-sm styled-col">
+                <label class="textCreate" id="createTime"> *Create Time: {{date | date: 'dd/MM/yyyy'}}</label>
+            </li>
+            <li class="col-sm styled-col">
+                <label class="textCreate" id="checkboxCompleted"> *Is ToDo Completed? :</label>
+                <input class="checkBoxEmpty" type="checkbox" name="isCompleted" ngModel>
+                
+            </li>
+            <p class="text">* Must be filled!</p>
+            
+            <app-button class = "ButtonSubmit" type="submit" text="Add To Do"></app-button>
+ 
+            <app-button (btnClick)="goBack()" text="Back" class = "ButtonBack"></app-button>
+
+        </form>
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

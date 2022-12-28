@@ -1,0 +1,14 @@
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
+.btn{
+  background: rgba(2, 76, 78, 0.623);
+  color: #fdfdfd;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn:hover{
+  background: rgb(129, 248, 238);
+  color:rgb(0, 0, 0);
+  padding: 15px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

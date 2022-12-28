@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="display-2">Selected ToDo</h2>
+    <hr>
+<form  #toDoForm="ngForm" (ngSubmit)="changeTheToDo(toDoForm.value)">
+        
+    <li>
+        <input class="checkBoxEmpty"  type="checkbox" name="isCompleted" (change)="changeTheIsCompleted(toDoDetails.Id,$event)" *ngIf="toDoDetails.IsCompleted==true" checked>
+        <input class="checkBoxEmpty"  type="checkbox" name="isCompleted" (change)="changeTheIsCompleted(toDoDetails.Id,$event)" *ngIf="toDoDetails.IsCompleted==false" >
+
+        <label class="textOfSelectedToDo" #txtTitle for="txtTitle">*Title</label>
+        <input class="PiecesOfSelectedToDo" id="txtTitle" type="text" name="title" [value]="toDoDetails.Title" ngModel>
+        
+    </li>
+    <li>
+        <label class="textOfSelectedToDo"  for="txtDetails">Details</label>
+        <input class="PiecesOfSelectedToDo" id="txtDetails" type="text" name="detail" [value]="toDoDetails.Detail" ngModel>
+    </li>
+    <li>
+        <label class="textOfSelectedToDo" for="prty">Priority:</label>
+        <select class="PiecesOfSelectedToDo" #slctPriority name = "priority" id="prty" [value]="toDoDetails.Priority" ngModel>
+            
+            <option value ="High">High</option>
+            <option value ="Medium">Medium</option>
+            <option value ="Low">Low</option>
+        </select>
+    </li>
+    <li>
+        <label class="textOfSelectedToDo" id="createTime"> *Create Time: </label>
+        <label class="PiecesOfSelectedToDo"> {{toDoDetails.CreateDate}}</label>
+    </li>
+    <li>
+        <label class="textOfSelectedToDo" id="checkboxCompleted"> *IsCompleted: </label> 
+        <label class="PiecesOfSelectedToDo">{{toDoDetails.IsCompleted}}</label>
+    </li>
+    <p class="warningText">* Must be filled!</p>
+
+    
+    <app-button class="ChangeButton" type="submit" text="Change ToDo"></app-button>
+    
+</form>
+
+<app-button class="DeleteButton" text="Delete" (btnClick)="deleteTheToDo(toDoDetails)" ></app-button>
+<app-button (btnClick)="goBack()" text="Back" class="BackButton"></app-button>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

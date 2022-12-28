@@ -1,0 +1,71 @@
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
+@mixin checkboxesChecked {
+  border: 1px solid rgb(35, 124, 124);
+  width: 15px;
+  height: 15px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+ 
+.display{
+  min-width: 100%;
+  min-height: 98vh;
+  background-color: aquamarine;
+}
+
+.Create{
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+.styled-col{
+  
+  background-color: rgb(42, 187, 175);
+  border: 1px solid rgb(35, 124, 124);
+  padding: 1%;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  
+}
+.SecondHeader{
+  text-align: center;
+  font-weight: bold;
+}
+.littleHeader{
+  font-weight:bolder;
+  text-align: center;
+}
+
+.links{
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+}
+.styled-col a{
+  background-color: rgb(42, 187, 175);
+  padding: 1%;
+}
+.checkBoxHigh{
+  accent-color: blue;
+}
+.checkBoxHigh:hover{
+  @include checkboxesChecked();
+}
+.checkBoxMedium{
+  accent-color: red;
+}
+
+.checkBoxMedium:hover{
+  @include checkboxesChecked();
+}
+
+.checkBoxLow{
+  accent-color: yellow;
+}
+.checkBoxLow:hover{
+  @include checkboxesChecked();
+}
+.checkBoxEmpty{
+  accent-color: green;
+}
+.checkBoxEmpty:hover{
+  @include checkboxesChecked();
+}
