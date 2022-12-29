@@ -58,9 +58,7 @@
           {{toDo.Title}} 
         </a>
         
-          
         
-          
       </div>
       <div class="col styled-col"*ngIf="toDo.IsCompleted == false && toDo.Priority=='Low'">
         <a class="links" [routerLink]="['details', toDo.Id]">

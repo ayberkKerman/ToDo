@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="display">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,17 +11,18 @@
     <br>
     <br>
     <br>
-    <div class="container" >
+    <h1 class="firstHeader">Delete User</h1>
+    <div class ="listForm" >
 
         
         <div class="row">
         <div class="col-md-3">
 
         
-        <div class ="row align-items-start" *ngFor="let user of userList">
+        <div  *ngFor="let user of userList">
             <div class="col styled-col">
                 <li>
-                    <a>{{user.Email}}   --   {{user.Id}}</a> 
+                    <a class="listElement">{{user.Email}}   --   {{user.Id}}</a> 
                     <a class="links" (click)="deleteUser(user.Id)">Delete</a>
                 </li>
 

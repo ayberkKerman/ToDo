@@ -5,9 +5,44 @@
     font-style: italic;
     font-weight:bolder;
     position: absolute;
-    right: 40%;
+    margin-left: 7%;
+}
+.listElement{
+    margin-left: 30%;
 }
 .editorInfo{
     
     text-align: center;
+}
+.back{
+    text-align: center;
+    margin-left: 1%,
+}
+.display{
+    min-width: 100%;
+    min-height: 98vh;
+    background-color: aquamarine;
+}
+.buttonSubmit{
+    text-align: center;
+    margin-right: 1%,
+}
+.firstHeader{
+    text-align: center;
+    font-weight: bold;
+}
+.adminForm{
+    background-color: rgb(42, 187, 175);
+    border: 1px solid rgb(35, 124, 124);
+    padding: 1%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    text-align: center;
+    margin-top: 10%;
+}
+.listForm{
+    background-color: rgb(42, 187, 175);
+    border: 1px solid rgb(35, 124, 124);
+    padding: 1%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    margin-top: 10%;
 }

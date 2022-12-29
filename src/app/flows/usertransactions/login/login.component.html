@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="display">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,22 +21,23 @@
         </div>
                   
         <div class="col-md-6 main">
-            <form #toDoForm="ngForm" (ngSubmit)="checkUserExist(toDoForm.value)"> 
+            <h1 class="firstHeader">LOGIN</h1>
+            <form class="loginForm" #toDoForm="ngForm" (ngSubmit)="checkUserExist(toDoForm.value)"> 
                 
                 <li class="col-sm styled-col">
-                    <input class="box" type="text" name="userEmail" id="userEmail" 
-                    placeholder="Email" ngModel required /><br>
+                    <input class="box"  maxlength="34" type="text" name="userEmail" id="userEmail" 
+                    placeholder="*Email" ngModel required /><br>
                 </li>
                 
                 <li class="col-sm styled-col">
-                    <input class="box" type="userPassword" name="userPassword" id="userPassword" 
-                    placeholder="Password" ngModel  required /><br>
+                    <input class="box" minlength="6" maxlength="24" type="password" name="userPassword" id="userPassword" 
+                    placeholder="*Password" ngModel  required /><br>
                 </li>
                 <a routerLink="forgot-password">Forgot Password?</a>
                 <p class="text">* Must be filled!</p>
                 
-                <app-button class = "ButtonSubmit" type="submit" text="Log in"></app-button>
-                <a> <app-button (click)="goToRegister()" text="Register" class = "btn-sm Register"></app-button></a>
+                <app-button class = "buttonSubmit" type="submit" text="Log in"></app-button>
+                <a> <app-button (click)="goToRegister()" text="Register" class = "btn-sm register"></app-button></a>
             </form>         
     
         </div>

@@ -50,7 +50,7 @@ export class ToDoComponent implements OnInit {
       id:this.toDoList[index].Id,
       toDo: this.toDoList[index]
     }
-    return this.http.put("http://localhost:8081/api/to-does/change-Is-Completed",params).subscribe()
+    return this.http.put("http://localhost:8081/api/to-does/is-completed",params).subscribe()
   }
   
   getToDoList(id:number){

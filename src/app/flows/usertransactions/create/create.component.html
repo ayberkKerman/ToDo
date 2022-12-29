@@ -15,7 +15,7 @@
 
         <form #toDoForm="ngForm" (ngSubmit)="onToDoCreate(toDoForm.value)"> 
             <li class="col-sm styled-col">
-                <input id="txtTitle"  placeholder="*Title" type="text" name="title" ngModel="" required #title ="ngModel">
+                <input id="txtTitle" maxlength="30"  placeholder="*Title" type="text" name="title" ngModel="" required #title ="ngModel">
                 <div class="text" *ngIf="title.invalid">
                    Title is Required.
                 </div>

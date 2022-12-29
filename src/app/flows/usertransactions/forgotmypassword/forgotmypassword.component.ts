@@ -34,7 +34,7 @@ export class ForgotmypasswordComponent implements OnInit {
   }
   matchVerificationCode(userVerificationCode:any){
     if(userVerificationCode.VerificationCode==this.verificationCode){
-      alert("Başarılı!")
+      alert("Succesfully!")
       this.showEmailVerificationMenu = false;
       this.showPasswordChangeMenu=true;
     }else{
@@ -44,13 +44,21 @@ export class ForgotmypasswordComponent implements OnInit {
   }
 
   changePassword(user: {userEmail?:string,Password:string,ConfirmPassword:string}){ 
+    
     if(user.Password==user.ConfirmPassword){
-      user.userEmail=this.userEmail;
-      this.http.put("http://localhost:8081/api/user-password",user).subscribe()
-      alert("Password Changed Succesfully!")
-      this.router.navigate(['']);
-    }  
-    else{
+
+      if(user.Password.length>6 && user.Password.length<24){
+
+        user.userEmail=this.userEmail;
+        this.http.put("http://localhost:8081/api/user-password",user).subscribe()
+        alert("Password Changed Succesfully!")
+        this.router.navigate(['']);
+
+      }else{
+        alert("Password Length Must Between Of 6 And 24 ")
+      }
+      
+    }else{
       alert("Passwords Doesn't Match. Please Try Again!")
     }
     

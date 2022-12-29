@@ -26,23 +26,28 @@ export class CreateComponent implements OnInit {
     this.router.navigate(['/toDo/'+this.idUser]);  
   }
   onToDoCreate(toDo: {title:string,isCompleted: boolean,detail: string, priority: string,createDate:Date,userId:number}){
-    toDo.userId=this.idUser;
-    toDo.createDate= this.date;
-    if(toDo.title==""){
-      alert("Title Cant Be Empty")
-    }
-    else{
-      if(toDo.isCompleted==true){
-        
+    if(toDo.title.length<=30 && toDo.priority!=""){
+      toDo.userId=this.idUser;
+      toDo.createDate= this.date;
+      if(toDo.title==""){
+        alert("Title Cant Be Empty")
       }
       else{
-        toDo.isCompleted=false
+        if(toDo.isCompleted==true){
+          
+        }
+        else{
+          toDo.isCompleted=false
+        }
+        
+        this.http.post("http://localhost:8081/api/to-do",toDo).subscribe();
+        alert("Add Succesful")
+        this.router.navigate(['/toDo/'+this.idUser]);
       }
-      
-      this.http.post("http://localhost:8081/Create",toDo).subscribe();
-      alert("Add Succesful")
-      this.router.navigate(['/toDo/'+this.idUser]);
+    }else{
+      alert("Title Must Be Lesser Than 30 Characters And Priority Can't Be Empty!")
     }
+    
     
   }
  

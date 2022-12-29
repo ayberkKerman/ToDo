@@ -16,6 +16,7 @@ import { EditorPanelComponent } from './flows/editortransactions/editor-panel/ed
 import { ForgotmypasswordComponent } from './flows/usertransactions/forgotmypassword/forgotmypassword.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { ForgotmypasswordComponent } from './flows/usertransactions/forgotmypass
     RegisterComponent,
     AdminPanelComponent,
     EditorPanelComponent,
-    ForgotmypasswordComponent
+    ForgotmypasswordComponent,
+
   ],
   imports: [
     BrowserModule,

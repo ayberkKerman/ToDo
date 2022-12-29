@@ -16,7 +16,7 @@
         <input class="checkBoxEmpty"  type="checkbox" name="isCompleted" (change)="changeTheIsCompleted(toDoDetails.Id,$event)" *ngIf="toDoDetails.IsCompleted==false" >
 
         <label class="textOfSelectedToDo" #txtTitle for="txtTitle">*Title</label>
-        <input class="PiecesOfSelectedToDo" id="txtTitle" type="text" name="title" [value]="toDoDetails.Title" ngModel>
+        <input maxlength="30" class="PiecesOfSelectedToDo" id="txtTitle" type="text" name="title" [value]="toDoDetails.Title" ngModel>
         
     </li>
     <li>

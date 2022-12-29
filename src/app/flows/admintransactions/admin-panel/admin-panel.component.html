@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="display">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,9 +18,9 @@
         <div class="col-md-3">
                       
         </div>
-         <header class="h1">Create Editor</header>       
+        <h1 class="firstHeader">Create Editor</h1>        
         <div class="col-md-6 main">
-            <form #toDoForm="ngForm" (ngSubmit)="registerEditor(toDoForm.value)"> 
+            <form class="adminForm" #toDoForm="ngForm" (ngSubmit)="registerEditor(toDoForm.value)"> 
                 
                 <li class="col-sm styled-col">
                     <input class="box" type="text" name="userEmail" id="userEmail" 
@@ -47,11 +47,11 @@
         <p></p>
         <p></p>
         
-
-        <div class ="row align-items-start" *ngFor="let user of editorList">
+        <h1 class="firstHeader">Delete Editor</h1>
+        <div class="listForm" *ngFor="let user of editorList">
             <div class="col styled-col">
                 <li>
-                    <a>{{user.Email}}   --   {{user.Id}}</a> 
+                    <a class="listElement">{{user.Email}}   --   {{user.Id}}</a> 
                     <a class="links" (click)="deleteEditor(user.Id)">Delete</a>
                 </li>
 

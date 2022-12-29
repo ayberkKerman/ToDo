@@ -22,7 +22,7 @@ export class DetailComponent implements OnInit {
     
     this.getToDo(this.id).subscribe((data:any)=>{
       this.toDoDetails = data.recordset[0];
-      console.log(this.toDoDetails)
+  
     })
     
     
@@ -42,13 +42,16 @@ export class DetailComponent implements OnInit {
       id:this.toDoDetails.Id,
       toDo: this.toDoDetails
     }
-    return this.http.put("http://localhost:8081/api/to-does/change-Is-Completed",params).subscribe()
+    
+    return this.http.put("http://localhost:8081/api/to-does/is-completed",params).subscribe()
    
   }
 
   changeTheToDo(toDo: {title:string,isCompleted: boolean,detail: string, priority: string,createDate:Date}){
     
-    toDo.createDate= this.toDoDetails.CreateDate;
+    if(toDo.title.length<=30){
+      toDo.createDate= this.toDoDetails.CreateDate;
+    
     if(toDo.title==""){
       toDo.title=this.toDoDetails.Title
       alert("Your old title has been set to your new title.")
@@ -75,8 +78,12 @@ export class DetailComponent implements OnInit {
       id:this.toDoDetails.Id,
       toDo: this.toDoDetails
     }
-    this.http.put("http://localhost:8081/api/to-does/change",params).subscribe();
+    console.log(params.toDo);
+    this.http.put("http://localhost:8081/api/to-does",params).subscribe();
     alert("Change Succesful")
+    }else{
+      alert("Title Lenght Must Be Lesser Than 30 Character")
+    }
   }
 
   deleteTheToDo(toDo:toDo){

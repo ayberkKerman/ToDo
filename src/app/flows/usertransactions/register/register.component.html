@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="display">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,28 +19,28 @@
         <div class="col-md-3">
                       
         </div>
-                
-        <div class="col-md-6 main">
-            <form #toDoForm="ngForm" (ngSubmit)="registerUser(toDoForm.value)"> 
+        <h1 class="firstHeader">SIGN UP</h1>       
+        <div *ngIf="!this.showEmailVerificationMenu" class="col-md-6 main">
+            <form class="loginForm" #toDoForm="ngForm" (ngSubmit)="registerUser(toDoForm.value)"> 
                 
                 <li class="col-sm styled-col">
-                    <input class="box" type="text" name="userEmail" id="userEmail" 
-                    placeholder="Email" ngModel required /><br>
+                    <input class="box" maxlength="34" type="text" name="userEmail" id="userEmail" 
+                    placeholder="*Email" ngModel required /><br>
                 </li>
                 
                 <li class="col-sm styled-col">
-                    <input class="box" type="userPassword" name="userPassword" id="userPassword" 
-                    placeholder="Password" ngModel  required /><br>
+                    <input class="box" minlength="6" maxlength="24" type="password" name="userPassword" id="userPassword" 
+                    placeholder="*Password" ngModel  required /><br>
                 </li>
                 <li class="col-sm styled-col">
-                    <input class="box" type="userConfirmPassword" name="userConfirmPassword" id="userConfirmPassword" 
-                    placeholder="Confirm Password" ngModel  required /><br>
+                    <input class="box" minlength="6" maxlength="24" type="password" name="userConfirmPassword" id="userConfirmPassword" 
+                    placeholder="*Confirm Password" ngModel  required /><br>
                 </li>
                 
                 <p class="text">* Must be filled!</p>
                 
-                <app-button class = "ButtonSubmit" type="submit" text="Sign in"></app-button>
-                <a routerLink=""> <app-button  text="Back" class = "btn-sm Register"></app-button></a>
+                <app-button class = "buttonSubmit" type="submit" text="Sign in"></app-button>
+                <a routerLink=""> <app-button  text="Back" class = "btn-sm register"></app-button></a>
             </form>         
     
         </div>
@@ -48,7 +48,20 @@
                   
         <div class="col-md-3">
         </div>
-                  
+        <div *ngIf="this.showEmailVerificationMenu">
+            <h1 class="firstHeader">Please Write Your Verification Code</h1> 
+            <form class="loginForm" #verifForm="ngForm" (ngSubmit)="matchVerificationCode(verifForm.value)"> 
+                
+                       
+                <input  type="text" minlength="6" maxlength="6" name="VerificationCode" id="VerificationCode" 
+                placeholder="*VerificationCode" ngModel required />
+               
+            
+                <p class="text">* Must be filled!</p>
+                
+                <app-button class = "buttonSubmit" type="submit" text="Confirm Code"></app-button>
+            </form>
+        </div>         
     </div>
     </div>
 </body>
